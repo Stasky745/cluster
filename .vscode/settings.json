@@ -12,5 +12,8 @@
         "vs-kubernetes.knownKubeconfigs": [
           "./kubeconfig"
       ]
+    },
+    "docker.environment": {
+        "DOCKER_HOST": ""
     }
 }
