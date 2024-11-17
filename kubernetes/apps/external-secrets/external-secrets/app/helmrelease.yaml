@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: external-secrets
         namespace: flux-system
-    install:
+  install:
     remediation:
       retries: 3
   upgrade:
