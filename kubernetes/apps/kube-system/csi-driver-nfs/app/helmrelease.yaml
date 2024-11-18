@@ -21,3 +21,11 @@ spec:
     remediation:
       strategy: rollback
       retries: 3
+  values:
+    externalSnapshotter:
+      enabled: true
+    
+    controller:
+      replicas: 2
+      runOnControlPlane: true
+      strategyType: RolloutUpdate
