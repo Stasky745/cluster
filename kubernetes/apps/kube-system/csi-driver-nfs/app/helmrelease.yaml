@@ -28,4 +28,4 @@ spec:
     controller:
       replicas: 2
       runOnControlPlane: true
-      strategyType: RolloutUpdate
+      strategyType: RollingUpdate
