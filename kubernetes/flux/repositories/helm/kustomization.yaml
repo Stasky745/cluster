@@ -16,3 +16,5 @@ resources:
   - ./ingress-nginx.yaml
   - ./k8s-gateway.yaml
   - ./external-secrets.yaml
+  # - ./cloudnative-pg.yaml
+  - ./csi-driver-nfs.yaml
