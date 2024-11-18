@@ -14,14 +14,8 @@ spec:
   superuserSecret:
     name: cloudnative-pg-secret
   enableSuperuserAccess: true
-  postgresql:
-    parameters:
-      max_connections: "250"
-      shared_buffers: 128MB
   resources:
     requests:
       cpu: 500m
     limits:
       memory: 4Gi
-  monitoring:
-    enablePodMonitor: true
