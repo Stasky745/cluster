@@ -12,6 +12,7 @@ spec:
   path: ./kubernetes/apps/managehub/firefly-iii/app
   dependsOn:
     - name: external-secrets-stores
+    - name: cloudnative-pg-cluster
   prune: true
   sourceRef:
     kind: GitRepository
