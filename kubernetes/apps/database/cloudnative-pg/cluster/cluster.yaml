@@ -14,8 +14,3 @@ spec:
   superuserSecret:
     name: cloudnative-pg-secret
   enableSuperuserAccess: true
-  resources:
-    requests:
-      cpu: 500m
-    limits:
-      memory: 4Gi
