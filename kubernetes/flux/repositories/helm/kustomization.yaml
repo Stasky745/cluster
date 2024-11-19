@@ -19,3 +19,4 @@ resources:
   - ./cloudnative-pg.yaml
   - ./csi-driver-nfs.yaml
   - ./onepassword-connect.yaml
+  - ./firefly-iii.yaml
