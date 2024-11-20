@@ -1,0 +1,44 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/main/charts/other/app-template/schemas/helmrelease-helm-v2.schema.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: firefly-iii
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: firefly-iii-stack
+      version: 0.8.0
+      sourceRef:
+        kind: HelmRepository
+        name: firefly-iii
+        namespace: flux-system
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      strategy: rollback
+      retries: 3
+  values:
+    firefly-db:
+      enabled: false
+
+    firefly-iii:
+      enabled: true
+      config:
+        existingSecret: firefly-iii
+
+      persistence:
+        enabled: true
+        storageClassName: data
+        accessModes: ReadWriteOnce
+        storage: 1Gi
+
+    importer:
+      enabled: true
+
+      firefly-iii:
+        url: http://firefly-iii:80
